@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Photo Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            margin: 0;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px 60px 20px;
+        }
+        .header h1 { margin: 0; font-size: 48px; }
+        
+        .social-header {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+        .social-header a {
+            color: #bdc3c7;
+            font-size: 24px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-header a:hover {
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        /* ▼▼▼ 自己紹介・経歴エリアのCSSを追加 ▼▼▼ */
+        .profile-container {
+            max-width: 800px; /* 文章が長くなりすぎないように幅を制限 */
+            margin: 0 auto 60px auto; /* 上下中央に配置し、ギャラリーとの間に余白を設ける */
+            padding: 0 20px;
+            color: #ecf0f1; /* 少し柔らかい白 */
+        }
+        .profile-section {
+            margin-bottom: 40px;
+        }
+        .profile-section h2 {
+            text-align: center;
+            font-size: 28px;
+            border-bottom: 2px solid #7f8c8d; /* 区切り線 */
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .profile-section p {
+            font-size: 16px;
+            line-height: 1.8; /* 行間を広げて読みやすくする */
+        }
+        .profile-section ul {
+            list-style: none; /*箇条書きの点を消す*/
+            padding-left: 0;
+        }
+        .profile-section li {
+            margin-bottom: 10px;
+            display: flex;
+        }
+        .profile-section li .year {
+            font-weight: bold;
+            color: #95a5a6;
+            min-width: 100px; /* 年号の幅を揃える */
+        }
+        /* ▲▲▲ ここまで追加 ▲▲▲ */
+
+        .gallery-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item { background-color: #34495e; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+        .gallery-item:hover { transform: scale(1.05); }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .caption { padding: 15px; }
+        .caption h3 { margin: 0 0 5px 0; }
+        .caption p { margin: 0; font-size: 14px; color: #bdc3c7; }
+        footer { text-align: center; padding: 40px 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="social-header">
+            <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" title="Twitter (写真用)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:your-email@example.com" title="お問い合わせ"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <h1>My Photo Gallery</h1>
+        <p>旅先で出会った風景</p>
+    </div>
+
+    <div class="profile-container">
+        <section id="about" class="profile-section">
+            <h2>ABOUT ME</h2>
+            <p>
+                パソコン・カメラ・その他電子機器に興味関心を示す野生の鴨。
+                カメラ・パソコン・電子機器・家電をいじるのが好き
+            </p>
+            
+            <h2>最近</h2>
+            <p>
+                荣耀MagicPad3を買ってウッキウキ！！
+                写真も結構撮ってるけど、満足行く写真があまりない。
+            </p>
+            <h2>自慢のガジェット</h2>
+            <p>
+                 スマホ：
+                 HONOR Magic 7 Pro / 
+                 Oneplus Ace 5 pro / 
+                 ASUS Zenfone9<br>
+                 
+                 カメラ：
+                 SONY α6400 <br>
+                 TAMRON 17-70mm F/2.8 Di III-A VC RXD <br>
+                 TAMRON 150-500mm F/5-6.7 Di III VC VXD <br>
+                 照準器 OLYMPUS EE-1<br>
+                 <br>
+                 パソコン関連：
+                 CPU:Corei7-10700K@5.7GHz <br>
+                 DDR4-3200MHz 64GB / GIGABITE RTX3070Ti OC <br>
+                 RTX3060 12G OC <br> 
+                 冷却 : コロナ製窓用エアコン
+            </p>
+        </section>
+
+        <section id="history" class="profile-section">
+            <h2>HISTORY</h2>
+             <ul>
+        <li>
+            <span class="year">2025年</span>
+            <span class="event">第三級アマチュア無線技士取得予定</span>
+        </li>
+        <li>
+            <span class="year">2024年</span>
+            <span class="event">HSK(漢語水平考試)6級取得</span>
+        </li>
+        <li>
+            <span class="year">2023年</span>
+            <span class="event">第四級アマチュア無線技士取得</span>
+        </li>
+        <li>
+            <span class="year">2022年</span>
+            <span class="event">英検2級取得 <br>スキー合宿前日にSONY α6400着弾！！</span>
+        </li>
+        <li>
+            <span class="year">2021年</span>
+            <span class="event">科技班入班</span>
+        </li>
+        <li>
+            <span class="year">2020年</span>
+            <span class="event">パソコンにハマる</span>
+        </li>
+        <li>
+            <span class="year">2019年</span>
+            <span class="event">漢検3級<br>スキー検定@熊の湯 3級取得</span>
+        </li>
+        <li>
+            <span class="year">2017年</span>
+            <span class="event">京葉ガス絵画コンクール　ほのぼの賞</span>
+        </li>
+        <li>
+            <span class="year">2016年</span>
+            <span class="event">公文 2016高進度学習者賞 高進度部門受賞</span>
+        </li>
+        <li>
+            <span class="year">2014年</span>
+            <span class="event">華為技術主催日本株式会社賛助 <br>全華連第二回"大使杯"スピーチコンテスト　銀賞</span>
+        </li>
+        <li>
+            <span class="year">2010年</span>
+            <span class="event">プールで溺れかける</span>
+        </li>
+    </ul>
+        </section>
+    </div>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x300/3498db/ffffff?text=海の写真" alt="海の写真">
+            <div class="caption">
+                <h3>夏の海岸</h3><p>2025年8月・沖縄</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x300/e74c3c/ffffff?text=山の写真" alt="山の写真">
+            <div class="caption">
+                <h3>秋の紅葉</h3><p>2024年11月・京都</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x300/2ecc71/ffffff?text=森の写真" alt="森の写真">
+            <div class="caption">
+                <h3>朝露の森</h3>
+                <p>2025年6月・長野</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x300/f1c40f/ffffff?text=街の写真" alt="街の写真">
+            <div class="caption">
+                <h3>夜の街並み</h3>
+                <p>2025年1月・東京</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Name.</p>
+    </footer>
+
+</body>
+</html>
